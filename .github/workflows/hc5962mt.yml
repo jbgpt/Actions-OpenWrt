@@ -17,9 +17,8 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
-REPO_BRANCH: oenwrt-24.10.0
-  FEEDS_CONF: feeds.conf.default
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   CONFIG_FILE: hc5962.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
