@@ -11,7 +11,8 @@
 #
 
 name: OpenWrt Builder
-
+watch:
+    types: [started]
 on:
   repository_dispatch:
   workflow_dispatch:
