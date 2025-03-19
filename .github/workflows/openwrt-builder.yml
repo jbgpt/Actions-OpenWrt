@@ -9,9 +9,7 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-
 name: OpenWrt Builder
-
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -28,7 +26,6 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-
 jobs:
   build:
     runs-on: ubuntu-22.04
