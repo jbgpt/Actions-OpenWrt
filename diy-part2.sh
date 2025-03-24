@@ -20,7 +20,9 @@ sed -i '/option band.*5g.*/{s|option disabled.*|option disabled 0|}' package/bas
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-sed -i '/option resourcebase'/luci-static/resources' feeds/luci/modules/base/root/etc/config/luci
-sed -i '/option lang 'zh_cn'' feeds/luci/modules/base/root/etc/config/luci
+sed -i 's/option lang auto/option lang zh_cn/g' feeds/luci/libs/web/root/etc/config
+echo 'config internal languages' >> feeds/luci/libs/web/root/etc/config
+echo 'option en 'English' >> feeds/luci/libs/web/root/etc/config
+echo 'option zh_cn 'chinese'' >> feeds/luci/libs/web/root/etc/config
 # Modify hostname
 sed -i 's/OpenWrt/office-open/g' package/base-files/files/bin/config_generate
