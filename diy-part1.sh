@@ -11,7 +11,7 @@
 #
 
 # Uncomment a feed source
-sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
+#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
 echo 'src-git ssrpack https://github.com/maxlicheng/luci-app-ssr-plus.git' >>feeds.conf.default
