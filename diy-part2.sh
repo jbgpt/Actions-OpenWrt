@@ -10,15 +10,21 @@
 # See /LICENSE for more information.
 sed -i -e "s/set system\.@system$-1$\.zonename='UTC'/set system\.@system$-1$\.timezone='CST-8'/" \
        -e "a\set system.@system[-1].zonename='Asia/Shanghai'" package/base-files/files/bin/config_generate# Modify default IP
-sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
-sed -i '/option band.*2g.*/{s|option ssid.*|option ssid "openwrt_2G"|}' package/base-files/files/bin/config_generate
-sed -i '/option band.*5g.*/{s|option ssid.*|option ssid "openwrt_5G"|}' package/base-files/files/bin/config_generate
-sed -i '/option band.*5g.*/{s|option country.*|option country "US"|}' package/base-files/files/bin/config_generate
-sed -i '/option band.*2g.*/{s|option disabled.*|option disabled 0|}' package/base-files/files/bin/config_generate
-sed -i '/option band.*5g.*/{s|option disabled.*|option disabled 0|}' package/base-files/files/bin/config_generate
+#sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
+#sed -i '/option band.*2g.*/{s|option ssid.*|option ssid "openwrt_2G"|}' package/base-files/files/bin/config_generate
+#sed -i '/option band.*5g.*/{s|option ssid.*|option ssid "openwrt_5G"|}' package/base-files/files/bin/config_generate
+#sed -i '/option band.*5g.*/{s|option country.*|option country "US"|}' package/base-files/files/bin/config_generate
+#sed -i '/option band.*2g.*/{s|option disabled.*|option disabled 0|}' package/base-files/files/bin/config_generate
+#sed -i '/option band.*5g.*/{s|option disabled.*|option disabled 0|}' package/base-files/files/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
 #sed -i 's/OpenWrt/office-open/g' package/base-files/files/bin/config_generate
+
+# 将仓库中的 files 目录复制到 OpenWrt 源码目录
+cp -rf $GITHUB_WORKSPACE/files $GITHUB_WORKSPACE/openwrt/
+
+# 其他自定义操作（如添加软件包、修改配置等）
+echo "DIY2: WiFi配置已预置"
