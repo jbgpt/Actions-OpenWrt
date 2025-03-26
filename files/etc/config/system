@@ -1,9 +1,16 @@
-#时区
-cat << EOF > files/etc/config/system
+cat << EOF > "$GITHUB_WORKSPACE/files/etc/config/system"
 config system
-    option hostname 'OpenWrt'
-    option zonename 'Asia/Shanghai'  # 时区设为上海
-    option timezone 'CST-8'          # 中国标准时间
+    option hostname 'MyOpenWrt'
+    option zonename 'Asia/Shanghai'
+    option timezone 'CST-8'
     option conloglevel '8'
     option cronloglevel '8'
+
+config timeserver ntp
+    list server '0.cn.pool.ntp.org'
+    list server '1.cn.pool.ntp.org'
+    list server '2.cn.pool.ntp.org'
+    list server '3.cn.pool.ntp.org'
+    option enabled '1'
+    option enable_server '0'
 EOF
