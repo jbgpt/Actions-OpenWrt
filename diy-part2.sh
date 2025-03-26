@@ -8,8 +8,8 @@
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
-#
-
+#system.@system[-1].timezone='CST-8' package/base-files/files/bin/config_generate
+#system.@system[-1].zonename='Asia/Shanghai' package/base-files/files/bin/config_generate
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 sed -i '/option band.*2g.*/{s|option ssid.*|option ssid "openwrt_2G"|}' package/base-files/files/bin/config_generate
