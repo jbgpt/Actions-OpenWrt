@@ -8,7 +8,7 @@
 #
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
-sed -i -e "s/set system\.@system$-1$\.zonename='UTC'/set system\.@system$-1$\.timezone='CST-8'/" \
+#sed -i -e "s/set system\.@system$-1$\.zonename='UTC'/set system\.@system$-1$\.timezone='CST-8'/" \
        -e "a\set system.@system[-1].zonename='Asia/Shanghai'" package/base-files/files/bin/config_generate# Modify default IP
 #sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 #sed -i '/option band.*2g.*/{s|option ssid.*|option ssid "openwrt_2G"|}' package/base-files/files/bin/config_generate
@@ -22,9 +22,18 @@ sed -i -e "s/set system\.@system$-1$\.zonename='UTC'/set system\.@system$-1$\.ti
 
 # Modify hostname
 #sed -i 's/OpenWrt/office-open/g' package/base-files/files/bin/config_generate
+#!/bin/bash
 
-# 将仓库中的 files 目录复制到 OpenWrt 源码目录
-cp -rf $GITHUB_WORKSPACE/files $GITHUB_WORKSPACE/openwrt/
+# 复制 files 到 OpenWrt 源码目录
+if [ -d "$GITHUB_WORKSPACE/files" ]; then
+    echo "找到 files 目录，正在复制..."
+    cp -rf "$GITHUB_WORKSPACE/files" "$GITHUB_WORKSPACE/openwrt/"
+else
+    echo "❌ 错误：未找到 files 目录！"
+    exit 1
+fi
 
-# 其他自定义操作（如添加软件包、修改配置等）
-echo "DIY2: WiFi配置已预置"
+# 设置 shadow 文件权限（确保安全）
+chmod 600 "$GITHUB_WORKSPACE/openwrt/files/etc/shadow"
+
+echo "DIY2: 系统配置已预置（时区、IP、密码、WiFi）"
