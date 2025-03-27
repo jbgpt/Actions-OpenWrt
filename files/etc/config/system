@@ -1,6 +1,5 @@
-cat << EOF > "$GITHUB_WORKSPACE/files/etc/config/system"
 config system
-    option hostname 'MyOpenWrt'
+    option hostname 'openwrt'
     option zonename 'Asia/Shanghai'
     option timezone 'CST-8'
     option conloglevel '8'
@@ -13,4 +12,3 @@ config timeserver ntp
     list server '3.cn.pool.ntp.org'
     option enabled '1'
     option enable_server '0'
-EOF
