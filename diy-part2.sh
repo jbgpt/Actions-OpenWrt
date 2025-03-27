@@ -25,7 +25,7 @@
 # 复制 files 到 OpenWrt 源码目录
 if [ -d "$GITHUB_WORKSPACE/files" ]; then
     echo "找到 files 目录，正在复制..."
-    cp -rf "$GITHUB_WORKSPACE/files" "$GITHUB_WORKSPACE/openwrt/"
+    cp -rf "files" "openwrt/"
 else
     echo "❌ 错误：未找到 files 目录！"
     exit 1
