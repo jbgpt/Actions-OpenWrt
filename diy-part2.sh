@@ -20,18 +20,8 @@
 #sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
-#sed -i 's/OpenWrt/office-open/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/office-open/g' package/base-files/files/bin/config_generate
 
-# 复制 files 到 OpenWrt 源码目录
-if [ -d "$GITHUB_WORKSPACE/files" ]; then
-    echo "找到 files 目录，正在复制..."
-    cp -rf "files" "openwrt/"
-else
-    echo "❌ 错误：未找到 files 目录！"
-    exit 1
-fi
 
-# 设置 shadow 文件权限（确保安全）
-#chmod 600 "$GITHUB_WORKSPACE/openwrt/files/etc/shadow"
 
 echo "DIY2: 系统配置已预置（时区、IP、WiFi）"
