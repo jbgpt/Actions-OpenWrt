@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://git.nju.edu.cn/nju/openwrt.git
-  REPO_BRANCH: openwrt-24.10
+  REPO_BRANCH: master
   FEEDS_CONF: nj.feeds.conf.default
   CONFIG_FILE: nj.config
   DIY_P1_SH: diy-part1.sh
