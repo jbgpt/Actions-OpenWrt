@@ -35,7 +35,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-
+      
+    - name: Checkout OpenWrt Code
+      uses: actions/checkout@v4
+      with:
+        repository: openwrt/openwrt
+        ref: v24.10.0  # 使用官方标签
+        submodules: recursive  # 必须同步子模块
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
