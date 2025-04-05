@@ -95,7 +95,13 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
+    - name: Resolve SSL Conflict
+      run: |
+    # 先删除冲突文件
+        rm -f /workdir/openwrt/build_dir/target-*/root-*/lib/libustream-ssl.so
+    
+      # 然后继续安装
+      make package/libustream-openssl/install
     - name: Compile the firmware
       id: compile
       run: |
