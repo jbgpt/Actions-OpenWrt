@@ -39,6 +39,15 @@ jobs:
         repository: openwrt/openwrt
         ref: v24.10.0  # 使用官方标签
         submodules: recursive  # 必须同步子模块
+  # 启用 BBR 的核心配置
+    - name: Enable BBR
+      run: |
+          #echo "CONFIG_PACKAGE_kmod-tcp-bbr=y" >> $CONFIG_FILE
+          echo "CONFIG_DEFAULT_TCP_CONG=\"bbr\"" >> $CONFIG_FILE
+          # 可选：启用 fq 队列（BBR 推荐搭配）
+          echo "CONFIG_PACKAGE_kmod-sched-core=y" >> $CONFIG_FILE
+          echo "CONFIG_PACKAGE_kmod-sched-fq_codel=y" >> $CONFIG_FILE
+          echo "net.core.default_qdisc=fq" >> package/base-files/files/etc/sysctl.conf
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
