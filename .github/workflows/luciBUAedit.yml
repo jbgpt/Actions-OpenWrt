@@ -35,7 +35,7 @@ jobs:
     steps:      
     - name: Checkout OpenWrt Code
       uses: actions/checkout@v4
-       with:
+        with:
           repository: openwrt/openwrt
           ref: v24.10.0  # 指定稳定版标签
     - name: Set Version to 24.10
