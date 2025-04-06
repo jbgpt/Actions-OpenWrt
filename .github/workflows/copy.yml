@@ -26,7 +26,7 @@ jobs:
         git remote add origin https://github.com/${{ env.TARGET_OWNER }}/${{ env.TARGET_REPO }}.git
         git pull origin ${{ env.TARGET_BRANCH }}
         # cp -r ../path-to-files/* .
-         cp -r ../files/etc/config/* ../Fclashfeeds.conf.default ../Fclash.config .
+         cp -r ../files/etc/config/* ../Fclasfeeds.conf.default ../Fclash.config .
 
         git add .
         git commit -m "Copy files from source-repo"
