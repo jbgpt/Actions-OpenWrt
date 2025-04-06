@@ -15,19 +15,22 @@ jobs:
 
     - name: Copy Files to Target Repo
       env:
-        TARGET_REPO: openwrt-stable
-        TARGET_OWNER: jbgpt
-        TARGET_BRANCH: main
+        TARGET_REPO: openwrt-stable  # 目标仓库的名称
+        TARGET_OWNER: jbgpt  # 目标仓库的所有者
+        TARGET_BRANCH: main  # 目标仓库的分支
         GITHUB_TOKEN: ${{ secrets.COPY_TOKEN }}
       run: |
+        # 创建临时目录并克隆目标仓库
         mkdir temp-clone
         cd temp-clone
         git init
         git remote add origin https://github.com/${{ env.TARGET_OWNER }}/${{ env.TARGET_REPO }}.git
         git pull origin ${{ env.TARGET_BRANCH }}
-        # cp -r ../path-to-files/* .
-         cp -r ../files/etc/config/* ../files/etc/config/
-
+        
+        # 复制文件到目标仓库
+        cp -r ../files/etc/config/* ./files/etc/config/
+        
+        # 提交并推送更改到目标仓库
         git add .
-        git commit -m "Copy files from source-repo"
+        git commit -m "Copy files from Actions-OpenWrt to openwrt-stable"
         git push origin ${{ env.TARGET_BRANCH }}
