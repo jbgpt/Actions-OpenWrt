@@ -15,17 +15,19 @@ jobs:
 
     - name: Copy Files to Target Repo
       env:
-        TARGET_REPO: target-repo
+        TARGET_REPO: openwrt-stable
         TARGET_OWNER: jbgpt
         TARGET_BRANCH: main
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.COPY_TOKEN }}
       run: |
         mkdir temp-clone
         cd temp-clone
         git init
         git remote add origin https://github.com/${{ env.TARGET_OWNER }}/${{ env.TARGET_REPO }}.git
         git pull origin ${{ env.TARGET_BRANCH }}
-        cp -r ../path-to-files/* .
+        # cp -r ../path-to-files/* .
+         cp -r ../files/etc/config/* .
+          cp -r ../Fclash.config .
         git add .
         git commit -m "Copy files from source-repo"
         git push origin ${{ env.TARGET_BRANCH }}
