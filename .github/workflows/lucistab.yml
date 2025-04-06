@@ -39,10 +39,10 @@ jobs:
           # repository: openwrt/openwrt
           # ref: v24.10.0 # 指定稳定版标签
           # submodules: recursive
-      - name: Set Version to 24.10.0
-        run: |
+      # - name: Set Version to 24.10.0
+        # run: |
           # 修改版本号配置文件
-          echo "CONFIG_VERSION_NICK=\"24.10.0\"" >> ${{ env.CONFIG_FILE }}
+          # echo "CONFIG_VERSION_NICK=\"24.10.0\"" >> ${{ env.CONFIG_FILE }}
 
       - name: Enable BBR
         run: |
@@ -59,7 +59,7 @@ jobs:
           sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
           sudo docker image prune --all --force
           sudo -E apt-get -qq update
-          sudo -E apt-get -qq install lib32gcc-s1
+          # sudo -E apt-get -qq install lib32gcc-s1
           sudo -E apt-get -qq install ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib genisoimage git git-core gperf intltool libelf-dev libglib2.0-dev libncurses5-dev libstdc++6-dbg libssl-dev libtool lib32gcc1 lib32stdc++6 libstdc++6-4.8-dbg lrzsz mkfifo mtools openjdk-8-jdk pandoc patch pkg-config python2.7 unzip wget xsltproc zlib1g-dev
           sudo -E apt-get -qq autoremove --purge
           sudo -E apt-get -qq clean
