@@ -5,3 +5,4 @@ src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-23.05
 src-git kenzo https://github.com/kenzok8/openwrt-packages
 src-git small https://github.com/kenzok8/small.git
 src-git opentopd  https://github.com/sirpdboy/sirpdboy-package
+src-git helloworld https://github.com/fw876/helloworld.git
