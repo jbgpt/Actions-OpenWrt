@@ -1,0 +1,31 @@
+name: Copy Files to Target Repo
+
+on:
+  push:
+    branches:
+      - main  # 你可以指定其他触发分支
+
+jobs:
+  copy-files:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Source Repo
+      uses: actions/checkout@v4
+
+    - name: Copy Files to Target Repo
+      env:
+        TARGET_REPO: target-repo
+        TARGET_OWNER: jbgpt
+        TARGET_BRANCH: main
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        mkdir temp-clone
+        cd temp-clone
+        git init
+        git remote add origin https://github.com/${{ env.TARGET_OWNER }}/${{ env.TARGET_REPO }}.git
+        git pull origin ${{ env.TARGET_BRANCH }}
+        cp -r ../path-to-files/* .
+        git add .
+        git commit -m "Copy files from source-repo"
+        git push origin ${{ env.TARGET_BRANCH }}
