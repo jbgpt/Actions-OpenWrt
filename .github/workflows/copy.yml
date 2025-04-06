@@ -13,6 +13,11 @@ jobs:
     - name: Checkout Source Repo
       uses: actions/checkout@v4
 
+    - name: Set up Git
+      run: |
+        git config --global user.name "jbgpt"
+        git config --global user.email "jamesbouregpt@hotmail.com"
+
     - name: Copy Files to Target Repo
       env:
         TARGET_REPO: openwrt-stable  # 目标仓库的名称
