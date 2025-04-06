@@ -38,7 +38,7 @@ jobs:
         with:
           repository: openwrt/openwrt
           ref: v24.10.0 # 指定稳定版标签
-
+          submodules: recursive
       - name: Set Version to 24.10.0
         run: |
           # 修改版本号配置文件
