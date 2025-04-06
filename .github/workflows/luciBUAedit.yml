@@ -35,8 +35,14 @@ jobs:
     steps:      
     - name: Checkout OpenWrt Code
       uses: actions/checkout@v4
+       with:
+          repository: openwrt/openwrt
+          ref: v24.10.0  # 指定稳定版标签
+    - name: Set Version to 24.10
+      run: |
+         # 修改版本号配置文件
+         echo "CONFIG_VERSION_NICK=\"24.10\"" >> ${{ env.CONFIG_FILE }}
 
-  # 启用 BBR 的核心配置
     - name: Enable BBR
       run: |
           # echo "CONFIG_PACKAGE_kmod-tcp-bbr=y" >> ${{ env.CONFIG_FILE }}
@@ -65,7 +71,7 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-
+        submodules: recursive  # 关键！同步子模块
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
