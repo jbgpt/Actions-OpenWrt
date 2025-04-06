@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: openwrt-24.10
+  REPO_BRANCH: openwrt-24.10.0
   FEEDS_CONF: luciBuAfeeds.conf.default
   CONFIG_FILE: luciBuA.config
   DIY_P1_SH: diy-part1.sh
