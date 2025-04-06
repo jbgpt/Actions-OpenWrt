@@ -19,7 +19,7 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-23.05
-  FEEDS_CONF: luciBuAfeeds.conf.default
+  FEEDS_CONF: luci2305feeds.conf.default
   CONFIG_FILE: luci2305.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
