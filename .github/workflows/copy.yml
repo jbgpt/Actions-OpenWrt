@@ -27,8 +27,8 @@ jobs:
         git pull origin ${{ env.TARGET_BRANCH }}
         # cp -r ../path-to-files/* .
          cp -r ../files/etc/config/* .
-          cp -r ../Fclash.config .
-          cp -r ../Fclasfeeds.conf.default
+          cp - ../Fclash.config .
+          cp ../Fclash.config .
         git add .
         git commit -m "Copy files from source-repo"
         git push origin ${{ env.TARGET_BRANCH }}
