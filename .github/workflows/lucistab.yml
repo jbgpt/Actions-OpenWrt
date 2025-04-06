@@ -60,9 +60,7 @@ jobs:
           sudo docker image prune --all --force
           sudo -E apt-get -qq update
           sudo -E apt-get -qq install lib32gcc-s1
-          sudo -E apt-get -qq install libstdc++6-dbg
-          sudo -E apt-get -qq install mkfifo
-          sudo -E apt-get -qq install ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib genisoimage git git-core gperf intltool libelf-dev libglib2.0-dev libncurses5-dev libssl-dev libtool lib32gcc1 lib32stdc++6 libstdc++6-4.8-dbg lrzsz mkfifo mtools openjdk-8-jdk pandoc patch pkg-config python2.7 unzip wget xsltproc zlib1g-dev
+          sudo -E apt-get -qq install ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib genisoimage git git-core gperf intltool libelf-dev libglib2.0-dev libncurses5-dev libstdc++6-dbg libssl-dev libtool lib32gcc1 lib32stdc++6 libstdc++6-4.8-dbg lrzsz mkfifo mtools openjdk-8-jdk pandoc patch pkg-config python2.7 unzip wget xsltproc zlib1g-dev
           sudo -E apt-get -qq autoremove --purge
           sudo -E apt-get -qq clean
           sudo timedatectl set-timezone "$TZ"
