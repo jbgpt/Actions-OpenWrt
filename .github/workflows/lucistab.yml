@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt BBtfeeds
+name: OpenWrt BBstab
 
 on:
   repository_dispatch:
@@ -39,10 +39,10 @@ jobs:
           repository: openwrt/openwrt
           ref: v24.10.0 # 指定稳定版标签
 
-      - name: Set Version to 24.10
+      - name: Set Version to 24.10.0
         run: |
           # 修改版本号配置文件
-          echo "CONFIG_VERSION_NICK=\"24.10\"" >> ${{ env.CONFIG_FILE }}
+          echo "CONFIG_VERSION_NICK=\"24.10.0\"" >> ${{ env.CONFIG_FILE }}
 
       - name: Enable BBR
         run: |
