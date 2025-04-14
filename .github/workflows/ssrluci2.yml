@@ -10,8 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt ssrluci24.10
-
+name: OpenWrt ssrluci2@main
 on:
   repository_dispatch:
   workflow_dispatch:
