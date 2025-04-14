@@ -21,7 +21,7 @@
 
 # Modify hostname
 #sed -i 's/OpenWrt/office-open/g' package/base-files/files/bin/config_generate
-echo "net.core.default_qdisc=fq" >> package/base-files/files/etc/sysctl.conf
+#echo "net.core.default_qdisc=fq" >> package/base-files/files/etc/sysctl.conf
 
 
 echo "DIY2: 系统配置已预置（时区、IP、WiFi）"
