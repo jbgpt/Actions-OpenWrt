@@ -62,7 +62,7 @@ jobs:
         # git clone --depth 1 --no-single-branch https://github.com/openwrt/openwrt.git
         cd openwrt
         git fetch --tags
-        git checkout tags/v24.10.0
+        git checkout tags/v24.10.1
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
