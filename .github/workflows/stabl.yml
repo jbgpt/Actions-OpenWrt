@@ -1,9 +1,4 @@
- - name: Clone repository with all tags
-        run: |
-         # git clone --depth 1 --no-single-branch https://github.com/openwrt/openwrt.git
-          cd openwrt
-          git fetch --tags
-          git checkout tags/v24.10.0
+
 #
 # https://github.com/P3TERX/Actions-OpenWrt
 #
@@ -16,7 +11,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt luci2303
+name: build clash stable
 
 on:
   repository_dispatch:
@@ -25,8 +20,8 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: openwrt-24.10
-  FEEDS_CONF: luci2305feeds.conf.default
-  CONFIG_FILE: luci2305.config
+  FEEDS_CONF: stabl/hc/feeds.conf.default
+  CONFIG_FILE: stabl/hc/clash.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -62,7 +57,12 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-
+         - name: Clone repository with all tags
+           run: |
+           # git clone --depth 1 --no-single-branch https://github.com/openwrt/openwrt.git
+           cd openwrt
+           git fetch --tags
+           git checkout tags/v24.10.0
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
