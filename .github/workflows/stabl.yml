@@ -1,0 +1,6 @@
+ - name: Clone repository with all tags
+        run: |
+         # git clone --depth 1 --no-single-branch https://github.com/openwrt/openwrt.git
+          cd openwrt
+          git fetch --tags
+          git checkout tags/v24.10.0
