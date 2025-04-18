@@ -1,0 +1,8 @@
+src-git packages https://git.openwrt.org/feed/packages.git;openwrt-24.10
+src-git luci https://git.openwrt.org/project/luci.git;openwrt-24.10
+src-git routing https://git.openwrt.org/feed/routing.git;openwrt-24.10
+src-git telephony https://git.openwrt.org/feed/telephony.git;openwrt-24.10
+src-git targets https://github.com/openwrt/targets.git;openwrt-24.10
+src-git kenzo https://github.com/kenzok8/openwrt-packages
+src-git small https://github.com/kenzok8/small.git
+src-git opentopd  https://github.com/sirpdboy/sirpdboy-package 
