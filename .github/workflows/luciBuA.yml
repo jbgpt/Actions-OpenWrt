@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt luci
+name: OpenWrt luciBuA
 
 on:
   repository_dispatch:
