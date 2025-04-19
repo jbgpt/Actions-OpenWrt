@@ -39,11 +39,11 @@ jobs:
   # 启用 BBR 的核心配置
     - name: Enable BBR
       run: |
-          # echo "CONFIG_PACKAGE_kmod-tcp-bbr=y" >> ${{ env.CONFIG_FILE }}
-          echo "CONFIG_DEFAULT_TCP_CONG=\"bbr\"" >> ${{ env.CONFIG_FILE }}
-          # 可选：启用 fq 队列（BBR 推荐搭配）
-          echo "CONFIG_PACKAGE_kmod-sched-core=y" >> ${{ env.CONFIG_FILE }}
-          echo "CONFIG_PACKAGE_kmod-sched-fq_codel=y" >> ${{ env.CONFIG_FILE }}
+           echo "CONFIG_PACKAGE_kmod-tcp-bbr=y" >> ${{ env.CONFIG_FILE }}
+           echo "CONFIG_DEFAULT_TCP_CONG=\"bbr\"" >> ${{ env.CONFIG_FILE }}
+          
+           echo "CONFIG_PACKAGE_kmod-sched-core=y" >> ${{ env.CONFIG_FILE }}
+           echo "CONFIG_PACKAGE_kmod-sched-fq_codel=y" >> ${{ env.CONFIG_FILE }}
          
     - name: Initialization environment
       env:
