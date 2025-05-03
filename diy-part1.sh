@@ -21,3 +21,4 @@ echo 'src-git ssrpack https://github.com/maxlicheng/luci-app-ssr-plus.git' >>fee
 #echo 'src-git smpackage https://github.com/kenzok8/small-package' >> feeds.conf.default
 #echo 'src-git smopenwrt https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
 #echo 'src-git sm https://github.com/kenzok8/small' >> feeds.conf.default
+2a6d68f3ded425efc0850296e7f62d53
