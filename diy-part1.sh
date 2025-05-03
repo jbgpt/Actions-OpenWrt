@@ -22,3 +22,7 @@ echo 'src-git ssrpack https://github.com/maxlicheng/luci-app-ssr-plus.git' >>fee
 #echo 'src-git smopenwrt https://github.com/kenzok8/openwrt-packages' >> feeds.conf.default
 #echo 'src-git sm https://github.com/kenzok8/small' >> feeds.conf.default
 #2a6d68f3ded425efc0850296e7f62d53
+# 替换 kernel-version.mk 的内核版本
+#sed -i 's/LINUX_VERSION-6.6 = .*/LINUX_VERSION-6.6 = .73/' include/kernel-version.mk
+#sed -i 's/LINUX_VERSION_CODE = .*/LINUX_VERSION_CODE = 6.6.73/' include/kernel-version.mk
+sed -i 's/LINUX_RELEASE = .*/LINUX_RELEASE = 3abe85def815b59c6c75ac1f92135cb6
