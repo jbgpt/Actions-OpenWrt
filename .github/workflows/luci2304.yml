@@ -62,6 +62,7 @@ jobs:
           cd openwrt
           git fetch --tags
           git checkout tags/v24.10.1
+          git orgianl
           git checkout 2a6d68f3ded425efc0850296e7f62d53
     - name: Load custom feeds
       run: |
