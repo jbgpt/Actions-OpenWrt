@@ -23,10 +23,6 @@ sed -i 's/192.168.1.1/192.168.20.1/g' package/base-files/files/bin/config_genera
 #sed -i 's/OpenWrt/office-open/g' package/base-files/files/bin/config_generate
 #echo "net.core.default_qdisc=fq" >> package/base-files/files/etc/sysctl.conf
 
-# 替换 kernel-version.mk 的内核版本
-#sed -i 's/LINUX_VERSION-6.6 = .*/LINUX_VERSION-6.6 = .73/' include/kernel-version.mk
-#sed -i 's/LINUX_VERSION_CODE = .*/LINUX_VERSION_CODE = 6.6.73/' include/kernel-version.mk
-sed -i 's/LINUX_RELEASE = .*/LINUX_RELEASE = 3abe85def815b59c6c75ac1f92135cb6
-# 替换 kernel-version.mk 的内核版本
+
 
 echo "DIY2: 系统配置已预置（时区、IP、WiFi）"
